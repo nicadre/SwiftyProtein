@@ -6,5 +6,7 @@ target 'SwiftyProtein' do
   use_frameworks!
 
   # Pods for SwiftyProtein
+  pod 'Alamofire'
+
 
 end
