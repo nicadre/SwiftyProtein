@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1766B5E893046BF9F8D577DD /* Pods_SwiftyProtein.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 936D1137AB85864499592C7B /* Pods_SwiftyProtein.framework */; };
+		38A79EDA1D3CF6DB0055DD2C /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38A79ED91D3CF6DB0055DD2C /* LocalAuthentication.framework */; };
+		38A79EDC1D3CF6F60055DD2C /* SceneKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38A79EDB1D3CF6F60055DD2C /* SceneKit.framework */; };
 		38AC8A8A1D365A0B00E18552 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AC8A891D365A0B00E18552 /* AppDelegate.swift */; };
 		38AC8A8C1D365A0B00E18552 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AC8A8B1D365A0B00E18552 /* LoginViewController.swift */; };
 		38AC8A911D365A0B00E18552 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38AC8A901D365A0B00E18552 /* Assets.xcassets */; };
@@ -17,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		38A79ED91D3CF6DB0055DD2C /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
+		38A79EDB1D3CF6F60055DD2C /* SceneKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SceneKit.framework; path = System/Library/Frameworks/SceneKit.framework; sourceTree = SDKROOT; };
 		38AC8A861D365A0B00E18552 /* SwiftyProtein.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftyProtein.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		38AC8A891D365A0B00E18552 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		38AC8A8B1D365A0B00E18552 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -35,6 +39,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38A79EDC1D3CF6F60055DD2C /* SceneKit.framework in Frameworks */,
+				38A79EDA1D3CF6DB0055DD2C /* LocalAuthentication.framework in Frameworks */,
 				C92A01831D3CD1D500D16C17 /* Alamofire.framework in Frameworks */,
 				1766B5E893046BF9F8D577DD /* Pods_SwiftyProtein.framework in Frameworks */,
 			);
@@ -117,6 +123,8 @@
 		72C2BEBDAFF81C461B6DD89D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				38A79EDB1D3CF6F60055DD2C /* SceneKit.framework */,
+				38A79ED91D3CF6DB0055DD2C /* LocalAuthentication.framework */,
 				C92A01821D3CD1D500D16C17 /* Alamofire.framework */,
 				936D1137AB85864499592C7B /* Pods_SwiftyProtein.framework */,
 			);
