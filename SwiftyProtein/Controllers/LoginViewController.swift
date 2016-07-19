@@ -53,7 +53,7 @@ class LoginViewController: UIViewController {
 				dispatch_async(dispatch_get_main_queue(), {
 
 					if success {
-						self.performSegueWithIdentifier("showList", sender: self)
+						self.performSegueWithIdentifier("showProteinList", sender: self)
 					}
 
 					if let error = error {
