@@ -16,6 +16,9 @@
 		38A79EE81D3E3B390055DD2C /* Atom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A79EE71D3E3B390055DD2C /* Atom.swift */; };
 		38A79EEA1D3E42E60055DD2C /* UIColor+fromRGB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A79EE91D3E42E60055DD2C /* UIColor+fromRGB.swift */; };
 		38A79EEE1D3E44A50055DD2C /* Connect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A79EED1D3E44A50055DD2C /* Connect.swift */; };
+		38A79EF01D3E4D7B0055DD2C /* ProteinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A79EEF1D3E4D7B0055DD2C /* ProteinViewController.swift */; };
+		38A79EF21D3E50A00055DD2C /* ProteinScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A79EF11D3E50A00055DD2C /* ProteinScene.swift */; };
+		38A79EF41D3E60FC0055DD2C /* SCNVector3+distance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A79EF31D3E60FC0055DD2C /* SCNVector3+distance.swift */; };
 		38AC8A8A1D365A0B00E18552 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AC8A891D365A0B00E18552 /* AppDelegate.swift */; };
 		38AC8A8C1D365A0B00E18552 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AC8A8B1D365A0B00E18552 /* LoginViewController.swift */; };
 		38AC8A911D365A0B00E18552 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38AC8A901D365A0B00E18552 /* Assets.xcassets */; };
@@ -33,6 +36,9 @@
 		38A79EE71D3E3B390055DD2C /* Atom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Atom.swift; sourceTree = "<group>"; };
 		38A79EE91D3E42E60055DD2C /* UIColor+fromRGB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+fromRGB.swift"; sourceTree = "<group>"; };
 		38A79EED1D3E44A50055DD2C /* Connect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Connect.swift; sourceTree = "<group>"; };
+		38A79EEF1D3E4D7B0055DD2C /* ProteinViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProteinViewController.swift; sourceTree = "<group>"; };
+		38A79EF11D3E50A00055DD2C /* ProteinScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProteinScene.swift; sourceTree = "<group>"; };
+		38A79EF31D3E60FC0055DD2C /* SCNVector3+distance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SCNVector3+distance.swift"; sourceTree = "<group>"; };
 		38AC8A861D365A0B00E18552 /* SwiftyProtein.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftyProtein.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		38AC8A891D365A0B00E18552 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		38AC8A8B1D365A0B00E18552 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -65,6 +71,7 @@
 			isa = PBXGroup;
 			children = (
 				38AC8A8B1D365A0B00E18552 /* LoginViewController.swift */,
+				38A79EEF1D3E4D7B0055DD2C /* ProteinViewController.swift */,
 				38A79EDD1D3D02A80055DD2C /* ProteinListViewController.swift */,
 			);
 			path = Controllers;
@@ -76,6 +83,7 @@
 				C90EBC811D3CD35D00E52771 /* LaunchScreen.storyboard */,
 				C90EBC821D3CD35D00E52771 /* Main.storyboard */,
 				38A79EE11D3D06480055DD2C /* LigandsListTableViewCell.swift */,
+				38A79EF11D3E50A00055DD2C /* ProteinScene.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -93,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				38A79EE91D3E42E60055DD2C /* UIColor+fromRGB.swift */,
+				38A79EF31D3E60FC0055DD2C /* SCNVector3+distance.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -282,12 +291,15 @@
 			files = (
 				38A79EEA1D3E42E60055DD2C /* UIColor+fromRGB.swift in Sources */,
 				38A79EE41D3E29B60055DD2C /* APIRequester.swift in Sources */,
+				38A79EF21D3E50A00055DD2C /* ProteinScene.swift in Sources */,
 				38A79EEE1D3E44A50055DD2C /* Connect.swift in Sources */,
 				38A79EDE1D3D02A80055DD2C /* ProteinListViewController.swift in Sources */,
 				38AC8A8C1D365A0B00E18552 /* LoginViewController.swift in Sources */,
 				38A79EE21D3D06480055DD2C /* LigandsListTableViewCell.swift in Sources */,
+				38A79EF41D3E60FC0055DD2C /* SCNVector3+distance.swift in Sources */,
 				38A79EE81D3E3B390055DD2C /* Atom.swift in Sources */,
 				38AC8A8A1D365A0B00E18552 /* AppDelegate.swift in Sources */,
+				38A79EF01D3E4D7B0055DD2C /* ProteinViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

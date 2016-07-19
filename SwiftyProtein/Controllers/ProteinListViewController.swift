@@ -17,6 +17,10 @@ class ProteinListViewController: UITableViewController {
 	var shouldShowFilteredResults: Bool = false
 	var searchController: UISearchController!
 
+	var atomsList = [Int : Atom]()
+	var connectsList = [Connect]()
+	var proteinSelected: String!
+
 	override func viewDidLoad() {
 
 		super.viewDidLoad()
@@ -42,6 +46,16 @@ class ProteinListViewController: UITableViewController {
 		self.searchController.obscuresBackgroundDuringPresentation = false
 
 		self.tableView.tableHeaderView = self.searchController.searchBar
+
+	}
+
+	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+
+		let vc = segue.destinationViewController as! ProteinViewController
+
+		vc.proteinName = proteinSelected
+		vc.atomList = atomsList
+		vc.connectList = connectsList
 
 	}
 
@@ -129,22 +143,24 @@ extension ProteinListViewController {
 
 				if let ligands = String(data: response.data!, encoding: NSUTF8StringEncoding)?.componentsSeparatedByString("\n") {
 
-					var atomsList = [Atom]()
-
-					var connectsList = [Connect]()
+					self.atomsList.removeAll()
+					self.connectsList.removeAll()
 
 					for ligand in ligands {
 
 						if let atom = Atom(atom: ligand) {
-							atomsList.append(atom)
+							self.atomsList[atom.id] = atom
 						}
 						if let connect = Connect(data: ligand) {
-							connectsList.append(connect)
+							self.connectsList.append(connect)
 						}
 
 					}
-					print(atomsList)
-					print(connectsList)
+
+					self.proteinSelected = name
+
+					self.performSegueWithIdentifier("showProteinDetail", sender: self)
+
 				}
 
 			}

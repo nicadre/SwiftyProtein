@@ -11,7 +11,7 @@ import Foundation
 class Connect {
 
 	let origin: Int
-	var destination: [Int]
+	var destinations: [Int]
 
 	init?(data: String) {
 
@@ -23,10 +23,10 @@ class Connect {
 
 		origin = Int(components[1])!
 
-		destination = []
+		destinations = []
 
 		for i in 2..<components.count {
-			destination.append(Int(components[i])!)
+			destinations.append(Int(components[i])!)
 		}
 	}
 

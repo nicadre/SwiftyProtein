@@ -41,7 +41,7 @@
             </objects>
             <point key="canvasLocation" x="261" y="399"/>
         </scene>
-        <!--Ligands-->
+        <!--Proteins-->
         <scene sceneID="hfT-Tg-DZG">
             <objects>
                 <tableViewController id="5gA-MQ-dYP" customClass="ProteinListViewController" customModule="SwiftyProtein" customModuleProvider="target" sceneMemberID="viewController">
@@ -79,11 +79,32 @@
                             <outlet property="delegate" destination="5gA-MQ-dYP" id="BOC-Uc-2dR"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Ligands" id="O1K-Zh-Ewk"/>
+                    <navigationItem key="navigationItem" title="Proteins" id="O1K-Zh-Ewk"/>
+                    <connections>
+                        <segue destination="fbE-AN-NjV" kind="show" identifier="showProteinDetail" id="AZw-z0-sqg"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a9d-8h-d8n" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1890" y="399"/>
+        </scene>
+        <!--Protein View Controller-->
+        <scene sceneID="2pM-mQ-sAR">
+            <objects>
+                <viewController id="fbE-AN-NjV" customClass="ProteinViewController" customModule="SwiftyProtein" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="k28-b1-tdO"/>
+                        <viewControllerLayoutGuide type="bottom" id="aRf-Wh-Zri"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="c6x-gl-Hqj" customClass="SCNView">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aoN-eC-Gkh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2697" y="399"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Mqu-eb-wYD">
