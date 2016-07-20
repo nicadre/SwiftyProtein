@@ -23,20 +23,20 @@ class ProteinScene: SCNScene {
 
 		initCamera()
 
-
-		print(atomsList.count)
 		for (_, atom) in atomsList {
 			createAtom(atom)
 		}
 		for connect in connectsList {
-			let atomSource = atomsList[connect.origin]
+			if let atomSource = atomsList[connect.origin] {
 
-			for destination in connect.destinations {
+				for destination in connect.destinations {
 
-				let atomDestination = atomsList[destination]
+					if let atomDestination = atomsList[destination] {
 
-				connectAtoms(atomSource!, atomDest: atomDestination!)
+						connectAtoms(atomSource, atomDest: atomDestination)
+					}
 
+				}
 			}
 		}
 

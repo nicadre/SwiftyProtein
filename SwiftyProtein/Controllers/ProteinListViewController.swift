@@ -57,6 +57,8 @@ class ProteinListViewController: UITableViewController {
 		vc.atomList = atomsList
 		vc.connectList = connectsList
 
+		self.searchController.active = false
+
 	}
 
 }
@@ -137,7 +139,6 @@ extension ProteinListViewController {
 		if UIApplication.sharedApplication().networkActivityIndicatorVisible == false {
 
 			let name = shouldShowFilteredResults ? filteredLigands[indexPath.row] : ligands[indexPath.row]
-
 
 			APIRequester.sharedInstance.requestLigand(name) { response in
 
