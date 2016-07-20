@@ -21,6 +21,12 @@ class ProteinViewController: UIViewController {
 
 		navigationItem.title = proteinName
 
+		let tap = UITapGestureRecognizer(target: self, action: #selector(ProteinViewController.onTap))
+
+		let scnView = self.view as! SCNView
+
+		scnView.addGestureRecognizer(tap)
+
 
 	}
 
@@ -34,5 +40,19 @@ class ProteinViewController: UIViewController {
 		scnView.backgroundColor = UIColor.fromRGB(0xeeeeee)
 		scnView.autoenablesDefaultLighting = true
 		scnView.allowsCameraControl = true
+	}
+
+	func onTap(gesture: UITapGestureRecognizer) {
+		let scnView = self.view as! SCNView
+
+		let p = gesture.locationInView(view)
+		let atoms = scnView.hitTest(p, options: nil)
+
+		if atoms.count > 0 {
+			let result = atoms[0]
+//			if (result.node as? AtomNode) {
+//				displayInfo()
+//			}
+		}
 	}
 }
