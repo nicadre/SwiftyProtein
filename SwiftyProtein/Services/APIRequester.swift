@@ -11,8 +11,9 @@ import Alamofire
 class APIRequester {
 
 	static let sharedInstance = APIRequester()
-
-	let baseUrl: String = "http://file.rcsb.org/"
+    
+    let baseLigandUrl: String = "http://file.rcsb.org/"
+    let baseLigandInfosUrl: String = "http://www.rcsb.org/"
 
 	init() {
 	}
@@ -30,7 +31,11 @@ class APIRequester {
 	}
 
 	func requestLigand(ligandName: String, completionHandler: Response<NSData, NSError> -> Void) {
-		self.request(.GET, URLString: "\(self.baseUrl)ligands/download/\(ligandName)_model.pdb", completionHandler: completionHandler)
+		self.request(.GET, URLString: "\(self.baseLigandUrl)ligands/download/\(ligandName)_model.pdb", completionHandler: completionHandler)
 	}
 
+    func requestInfoLigand(ligandName: String, completionHandler: Response<NSData, NSError> -> Void) {
+        self.request(.GET, URLString: "\(self.baseLigandInfosUrl)pdb/rest/describeHet?chemicalID=\(ligandName)", completionHandler: completionHandler)
+    }
+    
 }

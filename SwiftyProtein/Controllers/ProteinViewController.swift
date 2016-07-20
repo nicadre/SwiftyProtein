@@ -8,12 +8,21 @@
 
 import UIKit
 import SceneKit
+import SWXMLHash
 
-class ProteinViewController: UIViewController {
+class ProteinViewController: UIViewController, UIPopoverPresentationControllerDelegate {
+    
+    @IBOutlet weak var infoAtomLabel: UILabel!
+    @IBOutlet weak var infoButton: UIButton!
 
-	var proteinName: String!
+    var proteinName: String!
 	var atomList: [Int : Atom]!
 	var connectList: [Connect]!
+    var xml: XMLIndexer?
+
+    @IBAction func displayInfo(sender: UIButton) {
+        performSegueWithIdentifier("popOverInfo", sender: self)
+    }
 
 	override func viewDidLoad() {
 
@@ -41,7 +50,7 @@ class ProteinViewController: UIViewController {
 		scnView.autoenablesDefaultLighting = true
 		scnView.allowsCameraControl = true
 	}
-
+    
 	func onTap(gesture: UITapGestureRecognizer) {
 		let scnView = self.view as! SCNView
 
@@ -50,9 +59,43 @@ class ProteinViewController: UIViewController {
 
 		if atoms.count > 0 {
 			let result = atoms[0]
-//			if (result.node as? AtomNode) {
-//				displayInfo()
-//			}
-		}
+			if let atom = result.node as? AtomNode {
+                self.infoAtomLabel.text = "Type: \(atom.atom.type) - Id: \(atom.atom.id)"
+                self.infoAtomLabel.sizeToFit()
+            } else {
+                infoAtomLabel.text = ""
+            }
+        }  else {
+            infoAtomLabel.text = ""
+        }
 	}
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "popOverInfo" {
+            let popoverViewController = segue.destinationViewController 
+            popoverViewController.modalPresentationStyle = UIModalPresentationStyle.Popover
+            popoverViewController.popoverPresentationController!.delegate = self
+            
+            popoverViewController.popoverPresentationController?.sourceRect = CGRectMake(infoButton.frame.width / 2, infoButton.frame.height + 2, 0, 0)
+            
+            if UIApplication.sharedApplication().networkActivityIndicatorVisible == false {
+                
+                APIRequester.sharedInstance.requestInfoLigand(self.proteinName) { response in
+                    
+                    dispatch_async(dispatch_get_main_queue()) {
+                        self.xml = SWXMLHash.parse(response.data!)
+                        
+                        print(self.xml!["describeHet"]["ligandInfo"]["ligand"]["formula"].element?.text)
+                    }
+                }
+                
+            }
+
+        }
+    }
+    
+    func adaptivePresentationStyleForPresentationController(controller: UIPresentationController) -> UIModalPresentationStyle {
+        return UIModalPresentationStyle.None
+    }
+
 }

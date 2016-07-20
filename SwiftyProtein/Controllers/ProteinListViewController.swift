@@ -160,7 +160,16 @@ extension ProteinListViewController {
 
 					self.proteinSelected = name
 
-					self.performSegueWithIdentifier("showProteinDetail", sender: self)
+                    if case 200..<300 = response.response!.statusCode {
+                        self.performSegueWithIdentifier("showProteinDetail", sender: self)
+                    }
+                    else {
+                        let alert = UIAlertController(title: "Load error", message: "Something went wrong with this ligand. Please try with another.", preferredStyle: .Alert)
+                        let action = UIAlertAction(title: "Ok", style: .Default, handler: nil)
+                        alert.addAction(action)
+                        self.presentViewController(alert, animated: true, completion: nil)
+                        
+                    }
 
 				}
 

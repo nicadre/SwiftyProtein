@@ -68,7 +68,7 @@ class ProteinScene: SCNScene {
 
 	func createAtom(atom: Atom) {
 		let sphere = SCNSphere(radius: 0.5)
-		let node = SCNNode(geometry: sphere)
+        let node = AtomNode(atom: atom, geometry: sphere)
 		sphere.firstMaterial?.diffuse.contents = atom.color
 		node.position = SCNVector3(x: atom.x, y: atom.y, z: atom.z)
 		self.rootNode.addChildNode(node)

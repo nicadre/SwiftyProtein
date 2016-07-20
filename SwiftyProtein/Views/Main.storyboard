@@ -25,10 +25,18 @@
                                     <action selector="touchIDButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iCf-at-bOd"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swifty Proteins" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3KT-aO-1Tt">
+                                <rect key="frame" x="163" y="198" width="274" height="51"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="42"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="jTc-A3-N5o" firstAttribute="top" secondItem="3KT-aO-1Tt" secondAttribute="bottom" constant="30" id="2IS-2L-yCB"/>
                             <constraint firstItem="jTc-A3-N5o" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3wp-EG-ybz"/>
+                            <constraint firstItem="3KT-aO-1Tt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="b5e-7k-xbQ"/>
                             <constraint firstItem="jTc-A3-N5o" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="dka-Ib-Zle"/>
                         </constraints>
                     </view>
@@ -54,13 +62,13 @@
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="StD-PH-pw9" id="tlL-ij-tsS">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ligand Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8D3-GK-hPh">
                                             <rect key="frame" x="8" y="11" width="101" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -99,12 +107,79 @@
                     <view key="view" contentMode="scaleToFill" id="c6x-gl-Hqj" customClass="SCNView">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hYZ-ew-uu7" userLabel="infoAtomLabel">
+                                <rect key="frame" x="300" y="580" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="hYZ-ew-uu7" firstAttribute="centerX" secondItem="c6x-gl-Hqj" secondAttribute="centerX" id="iRL-XJ-hWq"/>
+                            <constraint firstItem="aRf-Wh-Zri" firstAttribute="top" secondItem="hYZ-ew-uu7" secondAttribute="bottom" constant="20" id="qJ0-St-BIc"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="ltv-yW-DFT">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="nEn-cV-lEM">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="VEx-eX-jP3">
+                                <rect key="frame" x="558" y="11" width="22" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="displayInfo:" destination="fbE-AN-NjV" eventType="touchUpInside" id="3Qh-Id-Wlv"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="infoAtomLabel" destination="hYZ-ew-uu7" id="KRJ-aS-9Yd"/>
+                        <outlet property="infoButton" destination="VEx-eX-jP3" id="1se-SA-1Ch"/>
+                        <segue destination="TVb-cV-9b9" kind="popoverPresentation" identifier="popOverInfo" popoverAnchorView="VEx-eX-jP3" id="ucd-td-c3i">
+                            <popoverArrowDirection key="popoverArrowDirection" up="YES"/>
+                        </segue>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aoN-eC-Gkh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2697" y="399"/>
+        </scene>
+        <!--Pop Over View Controller-->
+        <scene sceneID="azn-za-Jdr">
+            <objects>
+                <viewController modalPresentationStyle="overFullScreen" id="TVb-cV-9b9" customClass="PopOverViewController" customModule="SwiftyProtein" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="UGJ-8O-Qma"/>
+                        <viewControllerLayoutGuide type="bottom" id="AqO-Xt-kUE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5jn-Bv-wc1">
+                        <rect key="frame" x="0.0" y="0.0" width="150" height="54"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cfN-cb-D5g">
+                                <rect key="frame" x="52" y="16" width="47" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="cfN-cb-D5g" firstAttribute="centerX" secondItem="5jn-Bv-wc1" secondAttribute="centerX" id="ENJ-TQ-phH"/>
+                            <constraint firstItem="cfN-cb-D5g" firstAttribute="centerY" secondItem="5jn-Bv-wc1" secondAttribute="centerY" id="ZYC-Bl-cNA"/>
+                        </constraints>
+                    </view>
+                    <value key="contentSizeForViewInPopover" type="size" width="150" height="54"/>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="150" height="54"/>
+                    <connections>
+                        <outlet property="atomTypeLabel" destination="cfN-cb-D5g" id="aid-9O-CEG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FHz-Ah-mGs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2697" y="846"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Mqu-eb-wYD">

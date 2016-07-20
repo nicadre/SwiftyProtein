@@ -22,9 +22,12 @@
 		38AC8A8A1D365A0B00E18552 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AC8A891D365A0B00E18552 /* AppDelegate.swift */; };
 		38AC8A8C1D365A0B00E18552 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AC8A8B1D365A0B00E18552 /* LoginViewController.swift */; };
 		38AC8A911D365A0B00E18552 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38AC8A901D365A0B00E18552 /* Assets.xcassets */; };
+		C90D0E241D3F95FD001F7206 /* PopOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90D0E231D3F95FD001F7206 /* PopOverViewController.swift */; };
+		C90D0E261D3FB963001F7206 /* SWXMLHash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C90D0E251D3FB963001F7206 /* SWXMLHash.framework */; };
 		C90EBC831D3CD35D00E52771 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C90EBC811D3CD35D00E52771 /* LaunchScreen.storyboard */; };
 		C90EBC841D3CD35D00E52771 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C90EBC821D3CD35D00E52771 /* Main.storyboard */; };
 		C92A01831D3CD1D500D16C17 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C92A01821D3CD1D500D16C17 /* Alamofire.framework */; };
+		C9DD388C1D3F7BCB0081F813 /* AtomNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DD388B1D3F7BCB0081F813 /* AtomNode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,9 +50,12 @@
 		39C88BDB87A4F59BB5513CCD /* Pods-SwiftyProtein.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftyProtein.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftyProtein/Pods-SwiftyProtein.release.xcconfig"; sourceTree = "<group>"; };
 		7AF358246CD56AE811FBB430 /* Pods-SwiftyProtein.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftyProtein.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftyProtein/Pods-SwiftyProtein.debug.xcconfig"; sourceTree = "<group>"; };
 		936D1137AB85864499592C7B /* Pods_SwiftyProtein.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftyProtein.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C90D0E231D3F95FD001F7206 /* PopOverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopOverViewController.swift; sourceTree = "<group>"; };
+		C90D0E251D3FB963001F7206 /* SWXMLHash.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SWXMLHash.framework; path = "../../Library/Developer/Xcode/DerivedData/SwiftyProtein-gicusfjcidbdfzgvmclhtelbbrbx/Build/Products/Debug-iphonesimulator/SWXMLHash/SWXMLHash.framework"; sourceTree = "<group>"; };
 		C90EBC811D3CD35D00E52771 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C90EBC821D3CD35D00E52771 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		C92A01821D3CD1D500D16C17 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "../../Library/Developer/Xcode/DerivedData/SwiftyProtein-gicusfjcidbdfzgvmclhtelbbrbx/Build/Products/Debug-iphonesimulator/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
+		C9DD388B1D3F7BCB0081F813 /* AtomNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AtomNode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C90D0E261D3FB963001F7206 /* SWXMLHash.framework in Frameworks */,
 				38A79EDC1D3CF6F60055DD2C /* SceneKit.framework in Frameworks */,
 				38A79EDA1D3CF6DB0055DD2C /* LocalAuthentication.framework in Frameworks */,
 				C92A01831D3CD1D500D16C17 /* Alamofire.framework in Frameworks */,
@@ -73,6 +80,7 @@
 				38AC8A8B1D365A0B00E18552 /* LoginViewController.swift */,
 				38A79EEF1D3E4D7B0055DD2C /* ProteinViewController.swift */,
 				38A79EDD1D3D02A80055DD2C /* ProteinListViewController.swift */,
+				C90D0E231D3F95FD001F7206 /* PopOverViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -93,6 +101,7 @@
 			children = (
 				38A79EE71D3E3B390055DD2C /* Atom.swift */,
 				38A79EED1D3E44A50055DD2C /* Connect.swift */,
+				C9DD388B1D3F7BCB0081F813 /* AtomNode.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -150,6 +159,7 @@
 		72C2BEBDAFF81C461B6DD89D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C90D0E251D3FB963001F7206 /* SWXMLHash.framework */,
 				38A79EDB1D3CF6F60055DD2C /* SceneKit.framework */,
 				38A79ED91D3CF6DB0055DD2C /* LocalAuthentication.framework */,
 				C92A01821D3CD1D500D16C17 /* Alamofire.framework */,
@@ -297,8 +307,10 @@
 				38AC8A8C1D365A0B00E18552 /* LoginViewController.swift in Sources */,
 				38A79EE21D3D06480055DD2C /* LigandsListTableViewCell.swift in Sources */,
 				38A79EF41D3E60FC0055DD2C /* SCNVector3+distance.swift in Sources */,
+				C9DD388C1D3F7BCB0081F813 /* AtomNode.swift in Sources */,
 				38A79EE81D3E3B390055DD2C /* Atom.swift in Sources */,
 				38AC8A8A1D365A0B00E18552 /* AppDelegate.swift in Sources */,
+				C90D0E241D3F95FD001F7206 /* PopOverViewController.swift in Sources */,
 				38A79EF01D3E4D7B0055DD2C /* ProteinViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
