@@ -55,11 +55,24 @@ class ProteinViewController: UIViewController, UIPopoverPresentationControllerDe
         
     }
 
+	@IBAction func shareAction(sender: UIButton) {
+
+		let scnView = self.view as! SCNView
+
+		let objects = ["This \(proteinName) is awesome!", scnView.snapshot()]
+		let activityVC = UIActivityViewController(activityItems: objects, applicationActivities: nil)
+		
+		activityVC.popoverPresentationController?.sourceView = sender
+		self.presentViewController(activityVC, animated: true, completion: nil)
+	
+	}
+
 	override func viewDidLoad() {
 
 		super.viewDidLoad()
 
 		navigationItem.title = proteinName
+		infoAtomLabel.text = ""
 
 		let tap = UITapGestureRecognizer(target: self, action: #selector(ProteinViewController.onTap))
 

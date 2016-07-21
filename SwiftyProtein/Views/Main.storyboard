@@ -120,17 +120,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hYZ-ew-uu7" userLabel="infoAtomLabel">
-                                <rect key="frame" x="300" y="580" width="0.0" height="0.0"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Info label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hYZ-ew-uu7" userLabel="infoAtomLabel">
+                                <rect key="frame" x="265" y="521" width="70" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p6K-ti-p4M">
+                                <rect key="frame" x="280" y="550" width="40" height="30"/>
+                                <state key="normal" title="Share"/>
+                                <connections>
+                                    <action selector="shareAction:" destination="fbE-AN-NjV" eventType="touchUpInside" id="zRw-WG-Mlc"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="p6K-ti-p4M" firstAttribute="centerX" secondItem="c6x-gl-Hqj" secondAttribute="centerX" id="475-lU-OXH"/>
+                            <constraint firstItem="p6K-ti-p4M" firstAttribute="top" secondItem="hYZ-ew-uu7" secondAttribute="bottom" constant="8" id="ZEw-0o-qIl"/>
+                            <constraint firstItem="aRf-Wh-Zri" firstAttribute="top" secondItem="p6K-ti-p4M" secondAttribute="bottom" constant="20" id="hBd-bT-dy0"/>
                             <constraint firstItem="hYZ-ew-uu7" firstAttribute="centerX" secondItem="c6x-gl-Hqj" secondAttribute="centerX" id="iRL-XJ-hWq"/>
-                            <constraint firstItem="aRf-Wh-Zri" firstAttribute="top" secondItem="hYZ-ew-uu7" secondAttribute="bottom" constant="20" id="qJ0-St-BIc"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ltv-yW-DFT">
