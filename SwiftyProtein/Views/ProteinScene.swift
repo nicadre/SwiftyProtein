@@ -12,13 +12,15 @@ class ProteinScene: SCNScene {
 
 	let atomsList: [Int : Atom]
 	let connectsList: [Connect]
+    let representation: Bool
 
 	private var middleSCNVector3 =  SCNVector3()
 
-	init(atomsList: [Int : Atom], connectsList: [Connect]) {
+    init(atomsList: [Int : Atom], connectsList: [Connect], representation: Bool) {
 
 		self.atomsList = atomsList
 		self.connectsList = connectsList
+        self.representation = representation
 		super.init()
 
 		initCamera()
@@ -67,7 +69,7 @@ class ProteinScene: SCNScene {
 	}
 
 	func createAtom(atom: Atom) {
-		let sphere = SCNSphere(radius: 0.5)
+        let sphere = SCNSphere(radius: ( self.representation ? 0.5 : atom.radius))
         let node = AtomNode(atom: atom, geometry: sphere)
 		sphere.firstMaterial?.diffuse.contents = atom.color
 		node.position = SCNVector3(x: atom.x, y: atom.y, z: atom.z)

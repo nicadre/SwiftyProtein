@@ -14,6 +14,7 @@ class ProteinViewController: UIViewController, UIPopoverPresentationControllerDe
     
     @IBOutlet weak var infoAtomLabel: UILabel!
     @IBOutlet weak var infoButton: UIButton!
+    @IBOutlet weak var segmentControl: UISegmentedControl!
 
     var proteinName: String!
 	var atomList: [Int : Atom]!
@@ -73,6 +74,8 @@ class ProteinViewController: UIViewController, UIPopoverPresentationControllerDe
 
 		navigationItem.title = proteinName
 		infoAtomLabel.text = ""
+        
+        segmentControl.selectedSegmentIndex = 0
 
 		let tap = UITapGestureRecognizer(target: self, action: #selector(ProteinViewController.onTap))
 
@@ -88,7 +91,7 @@ class ProteinViewController: UIViewController, UIPopoverPresentationControllerDe
 
 		let scnView = self.view as! SCNView
 
-		scnView.scene = ProteinScene(atomsList: atomList, connectsList: connectList)
+        scnView.scene = ProteinScene(atomsList: atomList, connectsList: connectList, representation: true)
 
 		scnView.backgroundColor = UIColor.fromRGB(0xeeeeee)
 		scnView.autoenablesDefaultLighting = true
@@ -113,6 +116,20 @@ class ProteinViewController: UIViewController, UIPopoverPresentationControllerDe
             infoAtomLabel.text = ""
         }
 	}
+    
+    @IBAction func changeRepresentation(sender: AnyObject) {
+        
+        let scnView = self.view as! SCNView
+
+        switch segmentControl.selectedSegmentIndex {
+        case 0:
+            scnView.scene = ProteinScene(atomsList: atomList, connectsList: connectList, representation: true)
+        default:
+            
+            scnView.scene = ProteinScene(atomsList: atomList, connectsList: connectList, representation: false)
+        }
+        
+    }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "popOverInfo" {

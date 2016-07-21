@@ -133,11 +133,23 @@
                                     <action selector="shareAction:" destination="fbE-AN-NjV" eventType="touchUpInside" id="zRw-WG-Mlc"/>
                                 </connections>
                             </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Tgp-Dj-J0i">
+                                <rect key="frame" x="190" y="72" width="221" height="29"/>
+                                <segments>
+                                    <segment title="Balls and Sticks"/>
+                                    <segment title="Van Der Waals"/>
+                                </segments>
+                                <connections>
+                                    <action selector="changeRepresentation:" destination="fbE-AN-NjV" eventType="valueChanged" id="3py-A5-RhU"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="p6K-ti-p4M" firstAttribute="centerX" secondItem="c6x-gl-Hqj" secondAttribute="centerX" id="475-lU-OXH"/>
+                            <constraint firstItem="Tgp-Dj-J0i" firstAttribute="centerX" secondItem="c6x-gl-Hqj" secondAttribute="centerX" id="GuQ-gE-IwQ"/>
                             <constraint firstItem="p6K-ti-p4M" firstAttribute="top" secondItem="hYZ-ew-uu7" secondAttribute="bottom" constant="8" id="ZEw-0o-qIl"/>
+                            <constraint firstItem="Tgp-Dj-J0i" firstAttribute="top" secondItem="k28-b1-tdO" secondAttribute="bottom" constant="8" id="bpq-gz-xw9"/>
                             <constraint firstItem="aRf-Wh-Zri" firstAttribute="top" secondItem="p6K-ti-p4M" secondAttribute="bottom" constant="20" id="hBd-bT-dy0"/>
                             <constraint firstItem="hYZ-ew-uu7" firstAttribute="centerX" secondItem="c6x-gl-Hqj" secondAttribute="centerX" id="iRL-XJ-hWq"/>
                         </constraints>
@@ -156,6 +168,7 @@
                     <connections>
                         <outlet property="infoAtomLabel" destination="hYZ-ew-uu7" id="KRJ-aS-9Yd"/>
                         <outlet property="infoButton" destination="VEx-eX-jP3" id="1se-SA-1Ch"/>
+                        <outlet property="segmentControl" destination="Tgp-Dj-J0i" id="xSX-Hr-YgA"/>
                         <segue destination="TVb-cV-9b9" kind="popoverPresentation" identifier="popOverInfo" popoverAnchorView="VEx-eX-jP3" id="ucd-td-c3i">
                             <popoverArrowDirection key="popoverArrowDirection" up="YES"/>
                         </segue>
