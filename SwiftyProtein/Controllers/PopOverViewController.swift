@@ -10,13 +10,27 @@ import UIKit
 
 class PopOverViewController: UIViewController {
     
-    @IBOutlet weak var atomTypeLabel: UILabel!
+    @IBOutlet weak var chemicalIdLabel: UILabel!
+    @IBOutlet weak var typeLabel: UILabel!
+    @IBOutlet weak var weightLabel: UILabel!
+    @IBOutlet weak var chemicalNameLabel: UILabel!
+    @IBOutlet weak var formulaLabel: UILabel!
+
     
-    var atomType: String = ""
+    var chemicalId: String = ""
+    var type: String = ""
+    var weight: String = ""
+    var chemicalName: String = ""
+    var formula: String = ""
     
     override func viewDidLoad() {
-        self.atomTypeLabel.text = "Type: \(atomType)"
+        super.viewDidLoad()
         
+        self.chemicalIdLabel.text = "\(chemicalId)"
+        self.typeLabel.text = "\(type)"
+        self.weightLabel.text = "\(weight)"
+        self.chemicalNameLabel.text = "\(chemicalName)"
+        self.formulaLabel.text = "\(formula)"
         
     }
 }

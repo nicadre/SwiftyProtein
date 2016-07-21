@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -17,8 +18,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swifty Proteins" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KRl-UZ-RAl">
-                                <rect key="frame" x="163" y="274" width="274" height="51"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="VeS-5P-G2h">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swifty Protein" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KRl-UZ-RAl">
+                                <rect key="frame" x="173" y="274" width="254" height="51"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="42"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -27,7 +31,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="KRl-UZ-RAl" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="55L-8a-fU8"/>
+                            <constraint firstItem="VeS-5P-G2h" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="-20" id="831-7y-1DI"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="VeS-5P-G2h" secondAttribute="bottom" id="UaT-5R-v7P"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="VeS-5P-G2h" secondAttribute="trailing" constant="-20" id="VIi-jr-rFp"/>
                             <constraint firstItem="KRl-UZ-RAl" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="eB2-JR-s5i"/>
+                            <constraint firstItem="VeS-5P-G2h" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="-20" id="xGa-6i-bVz"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -36,4 +44,7 @@
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Background" width="400" height="600"/>
+    </resources>
 </document>
